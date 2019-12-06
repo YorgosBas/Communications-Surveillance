@@ -12,16 +12,19 @@ public class Main {
 		
 		Suspect s2 = new Suspect("Danny Rust", "Rusty Knife", "UK", "London");
 		s2.addNumber("00446999888888");
-		
+
 		Suspect s3 = new Suspect("Bob Robson", "Frozen Bear", "Spain", "Oslo");
 		s3.addNumber("00478484777777");
 		s3.addNumber("00478484666666");
 		s3.addNumber("00478484222222");
+
+		Suspect s4 = new Suspect("GIANNIS", "Sleepy Dog", "Spain", "Barcelona");
+		s4.addNumber("11478484666666");
 		
-		//Creaton of communication objects
+		//Creation of communication objects
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/DD");
 		
-		Communication[] comms = new Communication[14];
+		Communication[] comms = new Communication[15];
 		
 		comms[0] = new PhoneCall("00496955444444", "00478484777777", 15, 10, 2017, 127);
 		comms[1] = new PhoneCall("00496955444444", "00478484777777", 16, 10, 2017, 240);
@@ -38,6 +41,7 @@ public class Main {
 		comms[11] = new SMS("00478484777777", "00446999888888", 14, 10, 2017, "Gun Received from Rusty Knife");
 		comms[12] = new SMS("00478484777777", "00446999888888", 15, 10, 2017, "Metro Attack ready");
 		comms[13] = new SMS("00478484666666", "00446999888888", 16, 10, 2017, "Explosives downtown have been placed");
+		comms[14] = new SMS("11478484666666", "00446999888888", 16, 10, 2017, "Explosives downtown have been placed");
 		
 		//Creation of Registry object
 		Registry registry = new Registry();
@@ -45,11 +49,11 @@ public class Main {
 		registry.addSuspect(s1);
 		registry.addSuspect(s2);
 		registry.addSuspect(s3);
+		registry.addSuspect(s4);
 		
-		for(int i=0; i<14; i++)
+		for(int i=0; i<15; i++)
 			registry.addCommunication(comms[i]);
-		
-		
+
 		//-------------TESTS----------------------
 		//Test 1. Suspect With MostPartners
 		Suspect topSuspect = registry.getSuspectWithMostPartners();
@@ -59,7 +63,7 @@ public class Main {
 		PhoneCall longestCall = registry.getLongestPhoneCallBetween("00496955444444", "00478484777777");
 		System.out.println("\nTest2 – Longest phone call between 2 numbers: ");
 		longestCall.printInfo();
-		
+
 		//Test 3. get Suspicious Messages Between
 		ArrayList<SMS> listOfMessages = registry.getMessagesBetween("00478484777777", "00446999888888");
 		System.out.println("\nTest3 – Suspicious messages between 2 numbers: ");
@@ -70,7 +74,7 @@ public class Main {
 		System.out.println("\nTest4 – Checking connection between 2 suspects: ");
 		System.out.println(s1.isConnectedTo(s3));
 		System.out.println(s3.isConnectedTo(s2));
-		
+
 		//Test 5. get List of common partners
 		System.out.println("\nTest5 – List of common partners between 2 suspects: ");
 		ArrayList<Suspect> commonSuspects = s1.getCommonPartners(s3);

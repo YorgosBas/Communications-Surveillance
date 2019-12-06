@@ -1,4 +1,5 @@
 public abstract class Communication {
+
     String number1;
     String number2;
     int date;
@@ -13,5 +14,5 @@ public abstract class Communication {
         this.year = year;
     }
 
-    public  abstract void printInfo();
+    public abstract void printInfo();
 }
