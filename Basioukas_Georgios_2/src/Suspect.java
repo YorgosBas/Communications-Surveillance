@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
 public class Suspect {
+    ArrayList<String> numbers = new ArrayList<String>();
+    ArrayList<Suspect> potentialPartner = new ArrayList<Suspect>();
     String name;
     String codeName;
     String originCountry;
@@ -13,15 +15,22 @@ public class Suspect {
     }
 
     public void addNumber(String number){
-
+        numbers.add(number);
     }
 
     public boolean isConnectedTo(Suspect aSuspect){
+        if(){
+
+        }
         return true;
     }
 
+    public void addPotentialPartner(Suspect aSuspect){
+        potentialPartner.add(aSuspect);
+    }
+
     public ArrayList<Suspect> getCommonPartners(Suspect aSuspect){
-        return aSuspect;
+        return ArrayList<aSuspect> aSuspect;
     }
 
     public String getName(){
