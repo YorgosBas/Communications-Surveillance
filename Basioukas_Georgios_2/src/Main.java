@@ -1,6 +1,16 @@
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+_________                                     .__               __  .__                         _________                         .__.__  .__
+\_   ___ \  ____   _____   _____  __ __  ____ |__| ____ _____ _/  |_|__| ____   ____   ______  /   _____/__ ____________  __ ____ |__|  | |  | _____    ____   ____  ____
+/    \  \/ /  _ \ /     \ /     \|  |  \/    \|  |/ ___\\__  \\   __\  |/  _ \ /    \ /  ___/  \_____  \|  |  \_  __ \  \/ // __ \|  |  | |  | \__  \  /    \_/ ___\/ __ \
+\     \___(  <_> )  Y Y  \  Y Y  \  |  /   |  \  \  \___ / __ \|  | |  (  <_> )   |  \\___ \   /        \  |  /|  | \/\   /\  ___/|  |  |_|  |__/ __ \|   |  \  \__\  ___/
+ \______  /\____/|__|_|  /__|_|  /____/|___|  /__|\___  >____  /__| |__|\____/|___|  /____  > /_______  /____/ |__|    \_/  \___  >__|____/____(____  /___|  /\___  >___  >
+        \/             \/      \/           \/        \/     \/                    \/     \/          \/                        \/                  \/     \/     \/    \/
+-----------------------------------------Project by Georgios Basioukas(dai19174) for the purpose of the 2cd assignment in OOP-----------------------------------------------
+*/
 public class Main {
 
 	public static void main(String[] args) {
@@ -18,13 +28,10 @@ public class Main {
 		s3.addNumber("00478484666666");
 		s3.addNumber("00478484222222");
 
-		Suspect s4 = new Suspect("GIANNIS", "Sleepy Dog", "Spain", "Barcelona");
-		s4.addNumber("11478484666666");
-		
 		//Creation of communication objects
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/DD");
 		
-		Communication[] comms = new Communication[15];
+		Communication[] comms = new Communication[14];
 		
 		comms[0] = new PhoneCall("00496955444444", "00478484777777", 15, 10, 2017, 127);
 		comms[1] = new PhoneCall("00496955444444", "00478484777777", 16, 10, 2017, 240);
@@ -41,17 +48,15 @@ public class Main {
 		comms[11] = new SMS("00478484777777", "00446999888888", 14, 10, 2017, "Gun Received from Rusty Knife");
 		comms[12] = new SMS("00478484777777", "00446999888888", 15, 10, 2017, "Metro Attack ready");
 		comms[13] = new SMS("00478484666666", "00446999888888", 16, 10, 2017, "Explosives downtown have been placed");
-		comms[14] = new SMS("11478484666666", "00446999888888", 16, 10, 2017, "Explosives downtown have been placed");
-		
+
 		//Creation of Registry object
 		Registry registry = new Registry();
 		
 		registry.addSuspect(s1);
 		registry.addSuspect(s2);
 		registry.addSuspect(s3);
-		registry.addSuspect(s4);
 		
-		for(int i=0; i<15; i++)
+		for(int i=0; i<14; i++)
 			registry.addCommunication(comms[i]);
 
 		//-------------TESTS----------------------

@@ -1,3 +1,5 @@
+/*Communication class:
+* contains information about communications and is inherited by SMS and PhoneCall*/
 public abstract class Communication {
 
     String number1;

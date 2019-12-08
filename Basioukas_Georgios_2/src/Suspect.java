@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/*Suspect class:
+* contains each suspect and their information
+* */
 public class Suspect {
 
     ArrayList<String> numbers = new ArrayList<>();
@@ -21,24 +24,25 @@ public class Suspect {
     }
 
     public void addPotentialPartner(Suspect aSuspect){
-        if(!(potentialPartners.contains(aSuspect)) && aSuspect != null){
-            potentialPartners.add(aSuspect);
+        if(!(potentialPartners.contains(aSuspect)) && aSuspect != null){    //if the suspect is not already in the partner list
+            potentialPartners.add(aSuspect);                                //add him
         }
     }
 
     public boolean isConnectedTo(Suspect aSuspect){
-        return potentialPartners.contains(aSuspect);
+        return potentialPartners.contains(aSuspect);                        //search if the partner is in the list of a suspect
     }
 
     public ArrayList<Suspect> getCommonPartners(Suspect aSuspect){
         ArrayList<Suspect> commonPartners = new ArrayList<>();
-        for(Suspect suspect : potentialPartners) {
-            if(aSuspect.getPotentialPartners().contains(suspect))
-                commonPartners.add(suspect);
+        for(Suspect suspect : potentialPartners) {                          //iterate all partners of the suspect called   (s1.getC... the s1)
+            if(aSuspect.getPotentialPartners().contains(suspect))           //if the given suspect has the same partner with the called suspect
+                commonPartners.add(suspect);                                //add them on a list
         }
         return commonPartners;
     }
 
+    //partners from the same country
     public void printPotentialPartners(){
         System.out.println("\nPotential Partners of Suspect: " + name);
         for(Suspect potentialPartner : potentialPartners)
@@ -55,6 +59,7 @@ public class Suspect {
         System.out.println(name + " (" + codeName + ")");
     }
 
+    //getters
     public String getName(){
         return name;
     }

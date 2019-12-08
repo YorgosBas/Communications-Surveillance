@@ -8,6 +8,6 @@ public class SMS extends Communication {
     }
 
     public void printInfo(){
-        System.out.println("Number1: " + number1 + ", Number2: " + number2 + ", date: " + date + ", month: " + month + ", year: " + year + ", message: " + message);
+        System.out.println("This SMS has the following info \nBetween " + number1 + " --- " + number2 + "\non " + year + "/"+ month + "/" + date + "\nText: " + message);
     }
 }
